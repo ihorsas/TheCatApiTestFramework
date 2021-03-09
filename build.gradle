@@ -1,0 +1,35 @@
+plugins {
+    id 'base'
+}
+
+group 'api_automation'
+version '1.0-SNAPSHOT'
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+    }
+
+    buildscript {
+        repositories {
+            jcenter()
+            mavenCentral()
+        }
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.10'
+        annotationProcessor 'org.projectlombok:lombok:1.18.10'
+        compile group: 'org.jetbrains', name: 'annotations', version: '13.0'
+    }
+}
+
+defaultTasks 'clean', ':touch:runTests'
