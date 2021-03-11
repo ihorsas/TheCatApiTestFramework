@@ -100,4 +100,16 @@ public class ImageShort {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "ImageShort{" +
+                "breeds=" + breeds +
+                ", categories=" + categories +
+                ", id='" + id + '\'' +
+                ", url='" + url + '\'' +
+                ", width=" + width +
+                ", height=" + height +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
